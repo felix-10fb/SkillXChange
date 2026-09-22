@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FFF8F0;
+  --foreground: #161F30;
+  --brand-purple: #2E1A5E;
+  --brand-purple-dark: #291A53;
+  --brand-coral: #E36648;
+  --brand-bg: #FFF8F0;
+  --brand-text: #161F30;
+  --brand-card: #FFFFFF;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand-purple: var(--brand-purple);
+  --color-brand-purple-dark: var(--brand-purple-dark);
+  --color-brand-coral: var(--brand-coral);
+  --color-brand-bg: var(--brand-bg);
+  --color-brand-text: var(--brand-text);
+  --color-brand-card: var(--brand-card);
+}
+
+body {
+  background-color: var(--brand-bg);
+  color: var(--brand-text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF8F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #2E1A5E33;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2E1A5E66;
+}
+
+/* Animations */
+@keyframes swap-arrows {
+  0%, 100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(12px) scale(1.15);
+    opacity: 0.85;
+  }
+}
+
+@keyframes float-subtle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes pulse-coral {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(227, 102, 72, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(227, 102, 72, 0);
+  }
+}
+
+.animate-swap {
+  animation: swap-arrows 2.5s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float-subtle 4s ease-in-out infinite;
+}
+
+.animate-pulse-coral {
+  animation: pulse-coral 2s infinite;
+}
+
+/* Glassmorphism subtle card styling */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(46, 26, 94, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(46, 26, 94, 0.05);
+}
+
+.glass-card-purple {
+  background: rgba(46, 26, 94, 0.95);
+  backdrop-filter: blur(12px);
+  color: #FFF8F0;
+  border: 1px solid rgba(227, 102, 72, 0.2);
+  box-shadow: 0 20px 40px -15px rgba(41, 26, 83, 0.3);
+}
